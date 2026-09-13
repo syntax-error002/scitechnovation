@@ -36,7 +36,7 @@ export default function Chatbot() {
               <iframe
                 className="absolute inset-0 w-full h-full"
                 allow="microphone;"
-                src="https://console.dialogflow.com/api-client/demo/embedded/670e495b-a931-418e-ba66-3facfb0847ca"
+                src="https://bot.dialogflow.com/670e495b-a931-418e-ba66-3facfb0847ca"
                 style={{ border: 'none' }}
                 title="Dialogflow Chatbot"
               />
