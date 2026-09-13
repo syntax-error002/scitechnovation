@@ -27,6 +27,17 @@
     background: #000;
     color: #fff;
   }
+  
+  /* Dialogflow Messenger Custom Styles */
+  df-messenger {
+    --df-messenger-bot-message: #f3f4f6;
+    --df-messenger-button-titlebar-color: #000000;
+    --df-messenger-chat-background-color: #ffffff;
+    --df-messenger-font-color: #000000;
+    --df-messenger-send-icon: #000000;
+    --df-messenger-user-message: #e5e7eb;
+    z-index: 999;
+  }
 }
 
 @layer utilities {
