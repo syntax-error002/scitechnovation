@@ -5,7 +5,6 @@ import Highlights from './components/Highlights';
 import EventDirectory from './components/EventDirectory';
 import Schedule from './components/Schedule';
 import Venue from './components/Venue';
-import TeamRevealGrid from './components/TeamRevealGrid';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 
@@ -18,7 +17,6 @@ export default function App() {
       <EventDirectory />
       <Schedule />
       <Venue />
-      <TeamRevealGrid />
       <Footer />
       <Chatbot />
     </div>
