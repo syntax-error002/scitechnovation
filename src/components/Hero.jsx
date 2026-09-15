@@ -11,50 +11,14 @@ const INFO_CARDS = [
 ];
 
 export default function Hero() {
-  const [isInaugurated, setIsInaugurated] = React.useState(false);
-
-  const handleInauguration = () => {
-    setIsInaugurated(true);
-    
-    const end = Date.now() + 5 * 1000;
-    const colors = ['#000000', '#ffffff', '#fb4f43', '#3b82f6', '#14b8a6'];
-
-    (function frame() {
-      confetti({
-        particleCount: 8,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors,
-        zIndex: 200,
-      });
-      confetti({
-        particleCount: 8,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors,
-        zIndex: 200,
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-  };
-
   return (
     <section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center items-center text-center">
       
-      <div className="mb-12 w-full max-w-4xl mx-auto flex justify-center min-h-[200px] md:min-h-[350px] items-center">
+      <div className="mb-12 w-full max-w-4xl mx-auto flex justify-center items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 40, filter: "blur(15px)" }}
-          animate={
-            isInaugurated
-              ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
-              : { opacity: 0, scale: 0.8, y: 40, filter: "blur(15px)" }
-          }
-          transition={{ duration: 1.2, ease: "easeOut", type: "spring", bounce: 0.3 }}
+          animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.5, ease: "easeOut", type: "spring", bounce: 0.3 }}
           className="w-full flex justify-center"
         >
           <img 
@@ -68,7 +32,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden mb-12"
       >
         {INFO_CARDS.map((card) => (
@@ -86,24 +50,13 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
         className="flex flex-wrap justify-center gap-4 w-full"
       >
-        {!isInaugurated && (
-          <button 
-            onClick={handleInauguration} 
-            className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white hover:scale-105 transition-transform"
-          >
-            <Sparkles size={18} />
-            Inaugurate Fest '26
-          </button>
-        )}
-        {isInaugurated && (
-          <a href="#events" className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white">
-            Explore Events
-            <ArrowRight size={16} />
-          </a>
-        )}
+        <a href="#events" className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white">
+          Explore Events
+          <ArrowRight size={16} />
+        </a>
         <a href="#schedule" className="clean-btn-outline px-8 py-4 rounded-lg">
           Timeline
         </a>
