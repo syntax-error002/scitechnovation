@@ -1,15 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CalendarDays, MapPin, Building2, Coins, ArrowRight } from 'lucide-react';
+import { Sparkles, CalendarDays, MapPin, Building2, Coins, ArrowRight } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 const INFO_CARDS = [
   { label: 'Date', value: '17th & 18th Sept 2026' },
   { label: 'Venue', value: 'UPL University Campus, Ankleshwar' },
-  { label: 'Organiser', value: 'Dept of CE, IT, AI & DS' },
+  { label: 'Organiser', value: 'Dept of CE, IT, CO & IT' },
   { label: 'Registration', value: '₹50 / event' },
 ];
 
 export default function Hero() {
+  const handleInauguration = () => {
+    const end = Date.now() + 5 * 1000;
+    const colors = ['#000000', '#ffffff', '#fb4f43', '#3b82f6', '#14b8a6'];
+
+    (function frame() {
+      confetti({
+        particleCount: 8,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors,
+        zIndex: 200,
+      });
+      confetti({
+        particleCount: 8,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors,
+        zIndex: 200,
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  };
+
   return (
     <section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center items-center text-center">
       
@@ -51,12 +80,15 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="flex flex-wrap justify-center gap-4 w-full"
       >
-        <a href="#events" className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3">
-          Explore Events
-          <ArrowRight size={16} />
-        </a>
+        <button 
+          onClick={handleInauguration} 
+          className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white hover:scale-105 transition-transform"
+        >
+          <Sparkles size={18} />
+          Inaugurate Fest '26
+        </button>
         <a href="#schedule" className="clean-btn-outline px-8 py-4 rounded-lg">
-          View Schedule
+          Timeline
         </a>
       </motion.div>
 

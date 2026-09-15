@@ -15,7 +15,7 @@ export default function Footer() {
           
           <div className="lg:col-span-2">
             <h2 className="text-4xl font-black mb-6">
-              Sci-Technovation '26
+              Sci-Technovation 2026
             </h2>
             <p className="text-gray-400 max-w-sm font-medium">
               National Level Technical Festival. Where Technology meets Intelligence. Code Today, Sustain Tomorrow.
@@ -51,7 +51,7 @@ export default function Footer() {
                 </a>
               ))}
               <a href="http://www.upluniversity.ac.in" target="_blank" rel="noreferrer" className="hover:text-gray-300 transition-colors">
-                Official Website ↗
+                Official site ↗
               </a>
             </div>
           </div>

@@ -5,6 +5,7 @@ import Highlights from './components/Highlights';
 import EventDirectory from './components/EventDirectory';
 import Schedule from './components/Schedule';
 import Venue from './components/Venue';
+import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 
@@ -17,6 +18,7 @@ export default function App() {
       <EventDirectory />
       <Schedule />
       <Venue />
+      <Gallery />
       <Footer />
       <Chatbot />
     </div>

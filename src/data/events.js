@@ -141,14 +141,14 @@ export const events = [
     venue: 'Web Tech Lab Phase 4', date: '17 Sept', day: 'day1', team: '1–3 members',
     time: '10:00 AM', desc: 'Think, research, and present.',
     details: 'Themes: AI and Sustainability, Smart City, Semiconductor Technology, Carbon Neutral Future, Industry 4.0. Research papers judged on originality, depth, and delivery.',
-    coordinators: 'Anjali Yadav (63516 83800)',
+    coordinators: 'Anjali Yadav (63516 83800), Shaswat Kureel(7862008920)',
   },
   {
     id: 20, category: 'Interdisciplinary', title: 'Poster Making', fee: '₹50',
     venue: 'Web Tech Lab Phase 4', date: '17 Sept', day: 'day1', team: '1–2 members',
     time: '01:00 PM', desc: 'Draw the idea, build a better tomorrow.',
     details: 'Themes: AI & Robotics, Smart City, Semiconductor, Carbon Neutral, Industry 4.0. Hand-drawn or digitally created posters judged on creativity and message.',
-    coordinators: 'Anjali Yadav (63516 83800)',
+    coordinators: 'Anjali Yadav (63516 83800), Shaswat kureel(7862008920) ',
   },
   {
     id: 21, category: 'Interdisciplinary', title: 'Model & Simulation', fee: '₹50',
@@ -180,7 +180,7 @@ export const events = [
   },
   {
     id: 25, category: 'Fun Zone', title: 'Bid War 2K26', fee: '₹50',
-    venue: 'UPL SH-3', date: '17 & 18 Sept', day: 'both', team: 'Individual/Team',
+    venue: 'UPL SH-3', date:'17 & 18 Sept', day: 'both', team: 'Individual/Team',
     time: '03:00 PM', desc: 'The ultimate cricket auction battle.',
     details: 'Live IPL-style auction with virtual budget to assemble an 11-player squad. Strategic bidding, team composition, and fantasy points decide the winner.',
     coordinators: 'Harsh Rana (9510333249)',

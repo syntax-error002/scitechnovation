@@ -24,7 +24,7 @@ export default function EventDirectory() {
         >
           <div>
             <h2 className="text-4xl md:text-5xl font-black text-black tracking-tight mb-4">
-              Event Directory.
+              Event Directory
             </h2>
             <p className="text-gray-500 font-medium">Explore and register for 25+ events.</p>
           </div>

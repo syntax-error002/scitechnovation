@@ -56,7 +56,7 @@ export default function EventModal({ event, onClose }) {
 
             <div className="mb-8">
               <h4 className="text-sm font-bold text-black mb-3 pb-2 border-b border-gray-200">
-                Description
+                Secret...
               </h4>
               <p className="text-sm text-gray-600 leading-relaxed font-medium">
                 {event.desc}
@@ -65,7 +65,7 @@ export default function EventModal({ event, onClose }) {
 
             <div className="mb-8">
               <h4 className="text-sm font-bold text-black mb-3 pb-2 border-b border-gray-200">
-                Rules & Details
+                Why to play ?
               </h4>
               <div className="text-sm text-gray-600 leading-relaxed font-medium whitespace-pre-line">
                 {event.details}
@@ -80,7 +80,7 @@ export default function EventModal({ event, onClose }) {
                 <p className="text-sm font-bold">{event.coordinators}</p>
               </div>
               <button className="bg-white text-black px-6 py-2 text-sm font-bold hover:bg-gray-200 transition-colors">
-                Register Now
+                Contact Coordinators
               </button>
             </div>
           </div>
