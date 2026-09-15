@@ -17,6 +17,11 @@ export default function App() {
   const handleInauguration = () => {
     setIsInaugurated(true);
     
+    // Play the grand inauguration music
+    const audio = new Audio('/inauguration-music.mp3');
+    audio.volume = 1;
+    audio.play().catch(err => console.error("Audio play failed:", err));
+
     const end = Date.now() + 5 * 1000;
     const colors = ['#000000', '#ffffff', '#fb4f43', '#3b82f6', '#14b8a6'];
 
@@ -42,6 +47,18 @@ export default function App() {
         requestAnimationFrame(frame);
       }
     })();
+
+    // Smoothly fade out the music after 7 seconds (letting the visuals settle first)
+    setTimeout(() => {
+      const fadeInterval = setInterval(() => {
+        if (audio.volume > 0.05) {
+          audio.volume = Math.max(0, audio.volume - 0.05);
+        } else {
+          audio.pause();
+          clearInterval(fadeInterval);
+        }
+      }, 100); // Fades out over ~2 seconds
+    }, 7000);
   };
 
   return (
