@@ -11,7 +11,11 @@ const INFO_CARDS = [
 ];
 
 export default function Hero() {
+  const [isInaugurated, setIsInaugurated] = React.useState(false);
+
   const handleInauguration = () => {
+    setIsInaugurated(true);
+    
     const end = Date.now() + 5 * 1000;
     const colors = ['#000000', '#ffffff', '#fb4f43', '#3b82f6', '#14b8a6'];
 
@@ -42,19 +46,24 @@ export default function Hero() {
   return (
     <section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center items-center text-center">
       
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="mb-12 w-full max-w-4xl mx-auto flex justify-center"
-      >
-        <img 
-          src="/official-logo.png" 
-          alt="Sci-Technovation '26 Official Logo" 
-          className="w-full h-auto object-contain drop-shadow-xl"
-        />
-      </motion.div>
-
+      <div className="mb-12 w-full max-w-4xl mx-auto flex justify-center min-h-[200px] md:min-h-[350px] items-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 40, filter: "blur(15px)" }}
+          animate={
+            isInaugurated
+              ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
+              : { opacity: 0, scale: 0.8, y: 40, filter: "blur(15px)" }
+          }
+          transition={{ duration: 1.2, ease: "easeOut", type: "spring", bounce: 0.3 }}
+          className="w-full flex justify-center"
+        >
+          <img 
+            src="/official-logo.png" 
+            alt="Sci-Technovation '26 Official Logo" 
+            className="w-full h-auto object-contain drop-shadow-2xl"
+          />
+        </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -80,13 +89,21 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="flex flex-wrap justify-center gap-4 w-full"
       >
-        <button 
-          onClick={handleInauguration} 
-          className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white hover:scale-105 transition-transform"
-        >
-          <Sparkles size={18} />
-          Inaugurate Fest '26
-        </button>
+        {!isInaugurated && (
+          <button 
+            onClick={handleInauguration} 
+            className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white hover:scale-105 transition-transform"
+          >
+            <Sparkles size={18} />
+            Inaugurate Fest '26
+          </button>
+        )}
+        {isInaugurated && (
+          <a href="#events" className="clean-btn px-8 py-4 rounded-lg flex items-center gap-3 bg-black text-white">
+            Explore Events
+            <ArrowRight size={16} />
+          </a>
+        )}
         <a href="#schedule" className="clean-btn-outline px-8 py-4 rounded-lg">
           Timeline
         </a>
